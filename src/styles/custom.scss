@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+}
+
+$smallMax: 767.98px;
+$smallMin: 767.98px;
+$primaryColor: #145388;
+$colorGrey: #808080;
+
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (max-width: 400px) {
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: $smallMax) {
+}
+
+@media (min-width: $smallMin) {
+  //.wrapper {
+  //  //  width: 30%;
+  //  //  margin: 0 auto;
+  //  //}
+}
+
+.form-group .DayPickerInput {
+  width: 100%;
+}
+
+.DayPicker {
+  font-size: 0.8rem;
+}
+
+.flex-card {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+.card {
+  background: #fff;
+  border: initial;
+  border-radius: calc(0.15rem - 1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 6px rgba(0, 0, 0, 0.15);
+
+  @media (max-width: 575px) {
+    .card-body {
+      padding: 1.25rem;
+    }
+  }
+}
+
+.custom-card-header {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+@media (min-width: 992px) {
+  .d-flex.card + .d-flex.card {
+    margin-top: 1em;
+  }
+
+  .w-lg-100 {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .w-sm-50 {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .d-flex.card + .d-flex.card {
+    margin-left: 1em;
+  }
+}
+
+@media (max-width: 575px) {
+  .d-flex.card + .d-flex.card {
+    margin-top: 1em;
+    margin-left: 0;
+  }
+}
+
+.btn {
+  height: auto;
+  padding: 0.4rem;
+  border-radius: calc(0.15rem - 1px);
+  &:hover {
+    background-color: transparent;
+  }
+  &.btn-secondary {
+    &:hover {
+      background-color: $primaryColor;
+      color: #fff;
+    }
+  }
+}
+.w-10 {
+  width: 10%;
+}
+
+.w-15 {
+  width: 15%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.color-grey {
+  color: $colorGrey;
+}
+
+.text-small {
+  font-size: 0.76rem;
+  line-height: 0.9rem;
+}
+
+@media (max-width: 991px) {
+  .w-sm-100 {
+    width: 100% !important;
+  }
+}
+
+.min-width-zero {
+  min-width: 0;
+}
+
+.mb-3,
+.my-3 {
+  margin-bottom: 1rem !important;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.w-15 {
+  width: 15%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.ct-badge {
+  font-size: 75%;
+  padding: 0.55em 0.75em 0.6em;
+}
+
+.badge.badge-pill {
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+
+@mixin flex-wrap-fix($flex-basis, $max-viewport-width: 2000px) {
+  flex-grow: 1;
+  flex-basis: $flex-basis;
+  max-width: 100%;
+
+  $multiplier: 1;
+  $current-width: 0px;
+
+  @while $current-width < $max-viewport-width {
+    $current-width: $current-width + $flex-basis;
+    $multiplier: $multiplier + 1;
+
+    @media (min-width: $flex-basis * $multiplier) {
+      max-width: percentage(1 / $multiplier);
+    }
+  }
+}
+
+.card-container {
+  @include flex-wrap-fix(400px);
+
+  .card {
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(245, 244, 244, 0.87);
+    }
+  }
+
+
+}
+
+.main-txt-color {
+  color: rgba(0,0,0,.6);
+}
+
+.delete-container {
+  height: 50px;
+  width: 50px;
+  bottom: 10px;
+  right: 0;
+
+  i {
+    cursor: pointer;
+  }
+
+  & :hover {
+    font-size: 26px;
+    color: darken($colorGrey, 10%) !important;
+  }
+}
+
+.svg-circle {
+  fill: currentColor;
+  width: 20px;
+  height: 16px;
+  display: inline-block;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.txt-car-plate-padding-top {
+  align-self: flex-end;
+}
+
+.pt-6 {
+  padding-top: 4.5rem !important;
+}
+
+.sidebar-header {
+  div.collapsednav-toggler {
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    right: 18px;
+    cursor: pointer;
+    top: 20px; // (60 - 20) /2
+    color: rgba(255,255,255,.55);
+    // padding: 0 5px;
+    .material-icons {
+      font-size: 12px;
+    }
+  }
+}
+
+.card-add-new {
+  min-height: 154px;
+}
+
+.dateFilter legend {
+  transition: none;
+}
